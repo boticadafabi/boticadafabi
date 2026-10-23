@@ -71,3 +71,10 @@ html.motion-ready .reveal[data-delay="2"]{transition-delay:.16s}
 html.motion-ready .reveal[data-delay="3"]{transition-delay:.24s}
 @media(max-width:680px){.hero-halo{animation-duration:10s}.hero-visual:hover .hero-image-frame img{transform:scale(1.035)}.brand-card:hover{transform:translateY(-3px)}.payment-step:hover{transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){.hero-copy,.hero-visual,.hero-sticker,.hero-bottom,.hero-halo,.final-ornament{animation:none!important}.hero-image-frame img,.editorial-image img{transform:none!important}.reveal,html.motion-ready .reveal{opacity:1!important;transform:none!important;transition:none!important}.button:after{display:none}}
+
+
+/* Acabamento de navegação: progresso de leitura e cabeçalho tátil */
+.scroll-progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:100;background:transparent;pointer-events:none}
+.scroll-progress:after{content:"";display:block;height:100%;width:var(--scroll-progress,0%);background:linear-gradient(90deg,#24583f,#b88a98);transition:width .12s linear}
+.header.is-scrolled{box-shadow:0 9px 28px #183e2e0a;background:rgba(255,255,255,.97)}
+@media(prefers-reduced-motion:reduce){.scroll-progress:after{transition:none}}
