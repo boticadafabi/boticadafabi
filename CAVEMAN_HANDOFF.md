@@ -91,3 +91,16 @@ VERIFY-FIRST:
 - `script.js` e `README.md` não continham o nome completo exato. Nenhum outro arquivo do site foi alterado para nomes genéricos como “Fabi”.
 - Commit da correção: `19ac5a47aad35d1658c14b101a93d229a66f0da4`.
 - Publicação desta alteração ainda precisa ser confirmada pelo workflow do GitHub Pages.
+
+
+## SIGA — catálogo de ciclo recorrente — 2026-10-23
+- Reconciliado estado remoto: repositório público `boticadafabi/boticadafabi`, branch `main`, HEAD `7e649f366c150d322da0f241eb47b4b21025fc86`; último workflow GitHub Pages associado ao HEAD concluiu com sucesso (run `39985129372`). Metadado do repositório aponta homepage atual para https://boticadafabi.vercel.app.
+- Usuária confirmou que os links oficiais dos catálogos permanecem iguais entre ciclos de aproximadamente 15 dias.
+- Marcas/links permanecem como já cadastrados em `index.html`: O Boticário, Eudora, Quem Disse, Berenice? e O.U.i Paris. Não substituir URLs estáveis nem duplicar botões.
+- Decisão: preservar os links diretos oficiais; se os catálogos atualizam o conteúdo no mesmo endereço, os clientes já acessam a edição vigente sem publicar alteração no site.
+- Limite confirmado: isso NÃO cria uma vitrine local sincronizada de produtos, imagens ou preços. Não houve acesso a feed/API oficial ou exportação que permita sincronização confiável; não inventar dados nem fazer scraping que contorne controles.
+- Objetivo futuro de automação: verificar os quatro links e, se surgir fonte oficial de dados ou exportação de ciclo, avaliar sincronização real; sem fonte de dados, monitorar disponibilidade do link não detecta necessariamente a troca de catálogo.
+- Não foi criado agendamento separado nesta execução: os recursos de automação disponíveis aceitam frequências diária/semanal/mensal, não uma recorrência customizada exata de 15 dias; e um lembrete por si só não atualizaria o site/Vercel.
+- URL atual informada pelo metadado remoto: https://boticadafabi.vercel.app. Ainda não foi validada visualmente por navegador nesta execução.
+- MODE: WATCH — links estáveis resolvem a atualização dos catálogos hospedados pelas marcas; sincronização de produtos no próprio site permanece bloqueada por ausência de fonte oficial de dados.
+- VERIFY: repo e HEAD conferidos via GitHub API; Pages run `39985129372` success. Nenhum código do site alterado nesta execução.
