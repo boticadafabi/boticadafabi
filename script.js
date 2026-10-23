@@ -22,3 +22,28 @@ document.querySelectorAll('.whatsapp-link').forEach(link=>{
   link.addEventListener('click',()=>{});
 });
 document.querySelector('#year').textContent=new Date().getFullYear();
+// Motion editorial: entradas suaves ao rolar, com respeito a preferências de acessibilidade.
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion && 'IntersectionObserver' in window){
+  const revealTargets=[
+    '.brand-intro-head','.brand-card','.catalog-callout',
+    '.editorial-image','.editorial-copy','.payment-heading',
+    '.payment-step','.payment-methods','.payment-cta',
+    '.final-banner .eyebrow','.final-banner h2','.final-banner>p','.final-banner .button'
+  ];
+  const elements=[...new Set(revealTargets.flatMap(selector=>[...document.querySelectorAll(selector)]))];
+  elements.forEach((element,index)=>{
+    element.classList.add('reveal');
+    if(element.matches('.brand-card,.payment-step')) element.dataset.delay=String((index%3)+1);
+  });
+  document.documentElement.classList.add('motion-ready');
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+  elements.forEach(element=>revealObserver.observe(element));
+}
