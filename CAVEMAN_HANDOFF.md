@@ -66,3 +66,11 @@ VERIFY-FIRST:
 - Código visual atualizado no commit: `899795ce439a7ed1bce87a33aae8dcdae367ee49` (script.js; CSS foi commitado imediatamente antes).
 - Acessibilidade: animações desativadas/reduzidas quando o dispositivo solicita movimento reduzido.
 - Próximo passo: confirmar execução do workflow Pages para o HEAD novo e validar a URL publicada em navegador real; ainda não declarar inspeção visual concluída sem essa evidência.
+
+
+## Refinamento adicional de navegação — 2026-10-23
+- Barra superior discreta de progresso de leitura, atualizada com requestAnimationFrame durante a rolagem.
+- Cabeçalho sticky ganha sombra sutil após o início da rolagem.
+- Atualizados `index.html`, `styles.css` e `script.js` em commits na `main`.
+- Último commit de código: `118f162877ba2d6938b3ec0a824ea6759063848e`.
+- Deploy automático ainda precisa ser confirmado por execução de Actions e inspeção da URL publicada; não declarar validação visual concluída sem evidência.
