@@ -1,32 +1,24 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
-menuToggle?.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-  menuToggle.textContent = isOpen ? '×' : '☰';
+const menuToggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.nav');
+menuToggle?.addEventListener('click',()=>{
+  const open=nav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded',String(open));
+  menuToggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  menuToggle.textContent=open?'×':'☰';
 });
-nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
   nav.classList.remove('open');
-  menuToggle?.setAttribute('aria-expanded', 'false');
-  if (menuToggle) { menuToggle.textContent = '☰'; menuToggle.setAttribute('aria-label', 'Abrir menu'); }
+  menuToggle?.setAttribute('aria-expanded','false');
+  if(menuToggle){menuToggle.textContent='☰';menuToggle.setAttribute('aria-label','Abrir menu');}
 }));
-
-const filterButtons = document.querySelectorAll('[data-filter]');
-const productCards = document.querySelectorAll('.product-card');
-filterButtons.forEach(button => button.addEventListener('click', () => {
-  const filter = button.dataset.filter;
-  filterButtons.forEach(item => item.classList.toggle('active', item === button));
-  productCards.forEach(card => { card.hidden = filter !== 'todos' && card.dataset.category !== filter; });
+const waNumber='5521970023845';
+document.querySelectorAll('.order-button').forEach(button=>button.addEventListener('click',()=>{
+  const brand=button.dataset.brand;
+  const message='Oi, Fabi! Quero ajuda para escolher produtos do catálogo '+brand+'. Pode me enviar as opções, preços e disponibilidade atualizados?';
+  window.open('https://wa.me/'+waNumber+'?text='+encodeURIComponent(message),'_blank','noopener');
 }));
-
-let toastTimer;
-const toast = document.querySelector('.toast');
-document.querySelectorAll('.quick-add').forEach(button => button.addEventListener('click', () => {
-  const name = button.dataset.product || 'Produto';
-  toast.textContent = 'Você selecionou: ' + name + '. Entre em contato com a Botica da Fabi para consultar opções e valores.';
-  toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 3800);
-}));
-document.querySelector('#year').textContent = new Date().getFullYear();
+document.querySelectorAll('.whatsapp-link').forEach(link=>{
+  if(!link.href.includes('wa.me/')) return;
+  link.addEventListener('click',()=>{});
+});
+document.querySelector('#year').textContent=new Date().getFullYear();
