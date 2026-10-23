@@ -83,3 +83,11 @@ VERIFY-FIRST:
 - CSS responsivo com movimento suave, estados de foco e respeito a `prefers-reduced-motion`.
 - Commits de código: `ce0daba684073c6b0122d93916d3d56226ef0a80` (index.html), `556f245265193717d32490c3af1694a418541158` (styles.css).
 - Pendências: conferir imagens externas, workflow Pages do HEAD final e aparência da URL pública; a imagem gerada personalizada ainda não foi embutida no repositório. Não declarar validação visual completa sem evidência.
+
+
+## Correção ortográfica do nome — 2026-10-23
+- Pedido: toda ocorrência do nome completo no site deve usar exatamente `Fabí Cŕïstińe`.
+- Atualizado `index.html`; a busca no arquivo após a alteração não encontra mais `Fabi Cristine` e confirma 4 ocorrências de `Fabí Cŕïstińe`.
+- `script.js` e `README.md` não continham o nome completo exato. Nenhum outro arquivo do site foi alterado para nomes genéricos como “Fabi”.
+- Commit da correção: `19ac5a47aad35d1658c14b101a93d229a66f0da4`.
+- Publicação desta alteração ainda precisa ser confirmada pelo workflow do GitHub Pages.
