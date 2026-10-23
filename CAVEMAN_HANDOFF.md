@@ -57,3 +57,12 @@ VERIFY-FIRST:
 - Consultar HEAD de `main`, raiz, PRs/issues e Actions antes de qualquer nova alteração.
 - Verificar workflow associado ao HEAD atual e URL pública.
 - Não duplicar trabalho concluído.
+
+
+## Atualização visual — 2026-10-23
+- Pedido: reforçar animação, delicadeza, modernidade e fluidez, com referências de direção de arte premium (Nike, Louis Vuitton, Gucci e Prada), sem copiar logos ou elementos proprietários.
+- `styles.css`: microinterações, movimentos editoriais suaves, efeitos de hover, transições de imagem, halo animado e estados de foco visíveis.
+- `script.js`: revelação progressiva de conteúdo durante a rolagem com `IntersectionObserver`, e respeito à preferência `prefers-reduced-motion`.
+- Código visual atualizado no commit: `899795ce439a7ed1bce87a33aae8dcdae367ee49` (script.js; CSS foi commitado imediatamente antes).
+- Acessibilidade: animações desativadas/reduzidas quando o dispositivo solicita movimento reduzido.
+- Próximo passo: confirmar execução do workflow Pages para o HEAD novo e validar a URL publicada em navegador real; ainda não declarar inspeção visual concluída sem essa evidência.
