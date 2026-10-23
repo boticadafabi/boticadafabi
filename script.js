@@ -47,3 +47,20 @@ if(!reduceMotion && 'IntersectionObserver' in window){
   },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
   elements.forEach(element=>revealObserver.observe(element));
 }
+
+
+// Progresso de leitura discreto e cabeçalho com profundidade ao rolar.
+const progressBar=document.querySelector('.scroll-progress');
+const stickyHeader=document.querySelector('.header');
+let scrollTicking=false;
+const updateScrollDetails=()=>{
+  const scrollable=document.documentElement.scrollHeight-window.innerHeight;
+  const progress=scrollable>0?Math.min(100,Math.max(0,(window.scrollY/scrollable)*100)):0;
+  progressBar?.style.setProperty('--scroll-progress',progress.toFixed(2)+'%');
+  stickyHeader?.classList.toggle('is-scrolled',window.scrollY>12);
+  scrollTicking=false;
+};
+window.addEventListener('scroll',()=>{
+  if(!scrollTicking){window.requestAnimationFrame(updateScrollDetails);scrollTicking=true;}
+},{passive:true});
+updateScrollDetails();
