@@ -74,3 +74,12 @@ VERIFY-FIRST:
 - Atualizados `index.html`, `styles.css` e `script.js` em commits na `main`.
 - Último commit de código: `118f162877ba2d6938b3ec0a824ea6759063848e`.
 - Deploy automático ainda precisa ser confirmado por execução de Actions e inspeção da URL publicada; não declarar validação visual concluída sem evidência.
+
+
+## SIGA — vitrine editorial de inspiração — 2026-10-23
+- Estado anterior reconciliado: HEAD remoto era `f4539c6525a2f4df7e6c8bf9d02a95b3645228f4`; Actions Pages concluído com sucesso. A URL pública ainda não foi validada visualmente.
+- Avanço: adicionada seção responsiva `showcase` entre hero e marcas, com três imagens editoriais para perfumaria, maquiagem e autocuidado, legendas e links para explorar os catálogos.
+- As imagens são inspiração editorial e não são apresentadas como fotografias dos produtos reais em catálogo; aviso de transparência incluído.
+- CSS responsivo com movimento suave, estados de foco e respeito a `prefers-reduced-motion`.
+- Commits de código: `ce0daba684073c6b0122d93916d3d56226ef0a80` (index.html), `556f245265193717d32490c3af1694a418541158` (styles.css).
+- Pendências: conferir imagens externas, workflow Pages do HEAD final e aparência da URL pública; a imagem gerada personalizada ainda não foi embutida no repositório. Não declarar validação visual completa sem evidência.
