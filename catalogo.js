@@ -8,6 +8,9 @@ const sampleProducts=[
 {id:6,name:'Presentes com intenção',brand:'Eudora',category:'Presentes',desc:'Inspirações para celebrar alguém especial.',image:'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=85',badge:'PRESENTES'}
 ];
 let selectedBrand='Todas',selectedCategory='Todas';
+const requestedCategory=new URLSearchParams(window.location.search).get('categoria');
+const validCategories=['Perfumaria','Corpo e banho','Rosto e maquiagem','Cabelos','Presentes'];
+if(validCategories.includes(requestedCategory))selectedCategory=requestedCategory;
 const grid=document.querySelector('#product-grid'),search=document.querySelector('#product-search'),sort=document.querySelector('#sort-products');
 function renderProducts(){
  const term=search.value.trim().toLocaleLowerCase('pt-BR');
@@ -19,7 +22,7 @@ function renderProducts(){
  grid.querySelectorAll('.product-ask').forEach(btn=>btn.addEventListener('click',()=>{const msg='Oi, Fabi! Vi a vitrine da Botica da Fabi e quero consultar opções atuais de '+btn.dataset.product+' da marca '+btn.dataset.brand+'. Pode me enviar fotos oficiais, preço e disponibilidade?';window.open('https://wa.me/5521970023845?text='+encodeURIComponent(msg),'_blank','noopener');}));
 }
 document.querySelectorAll('[data-brand]').forEach(btn=>btn.addEventListener('click',()=>{selectedBrand=btn.dataset.brand;document.querySelectorAll('[data-brand]').forEach(b=>b.classList.toggle('active',b===btn));renderProducts()}));
-document.querySelectorAll('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{selectedCategory=btn.dataset.category;document.querySelectorAll('[data-category]').forEach(b=>b.classList.toggle('active',b===btn));renderProducts()}));
+document.querySelectorAll('[data-category]').forEach(btn=>{btn.classList.toggle('active',btn.dataset.category===selectedCategory);btn.addEventListener('click',()=>{selectedCategory=btn.dataset.category;document.querySelectorAll('[data-category]').forEach(b=>b.classList.toggle('active',b===btn));renderProducts()})});
 search.addEventListener('input',renderProducts);sort.addEventListener('change',renderProducts);
 document.querySelector('#clear-filters').addEventListener('click',()=>{selectedBrand='Todas';selectedCategory='Todas';search.value='';document.querySelectorAll('[data-brand]').forEach(b=>b.classList.toggle('active',b.dataset.brand==='Todas'));document.querySelectorAll('[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category==='Todas'));renderProducts()});
 renderProducts();
