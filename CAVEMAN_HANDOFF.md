@@ -104,3 +104,13 @@ VERIFY-FIRST:
 - URL atual informada pelo metadado remoto: https://boticadafabi.vercel.app. Ainda não foi validada visualmente por navegador nesta execução.
 - MODE: WATCH — links estáveis resolvem a atualização dos catálogos hospedados pelas marcas; sincronização de produtos no próprio site permanece bloqueada por ausência de fonte oficial de dados.
 - VERIFY: repo e HEAD conferidos via GitHub API; Pages run `39985129372` success. Nenhum código do site alterado nesta execução.
+
+
+## SIGA — páginas de marca e curadoria olfativa — 2026-10-26
+- Criadas páginas próprias: `quem-disse-berenice.html`, `oui-paris.html`, `eudora.html`, `o-boticario.html` e `fragrancias.html`.
+- As páginas de marca usam identidade Botica da Fabi, categorias editoriais, links oficiais atuais, WhatsApp e avisos para confirmar preços/disponibilidade. A página inicial ganhou navegação para as páginas e destaque para o quiz.
+- Quiz: seis perguntas, quatro perfis olfativos, resultado com notas e estilo, exportação client-side PNG e PDF (PDF depende de jsPDF via CDN).
+- Limite: os links oficiais não forneceram feed/exportação de produtos. Não foram inventados preços, fotos ou estoque e não foi reproduzido integralmente o catálogo protegido. Para cadastrar localmente todos os produtos, obter exportação autorizada dos dados/imagens.
+- Commits de páginas: `8866539`, `906b8c6`, `3b732e2`, `401b87d`, `ac76a2c`; alterações de index e CSS seguem nos commits retornados pela API nesta execução.
+- Próximo passo: confirmar HEAD, revisar integridade das páginas e estado do deploy. Não afirmar teste em navegador real ou publicação concluída sem evidência.
+- VERIFY-FIRST: estado remoto é canônico; preços e disponibilidade nunca devem ser inventados.
