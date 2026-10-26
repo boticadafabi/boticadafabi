@@ -132,3 +132,11 @@ VERIFY-FIRST:
 - Para preencher produtos reais com nomes, fotos e preços corretos, solicitar PDF/exportação autorizada do ciclo atual ou uma fonte oficial de dados; não copiar em massa conteúdo protegido sem autorização.
 - Commits desta alteração: `83a0c40fff489e0d04913c006fc531f9bb01e573` (index), `c80598b9f1d6486c1ca13d7dd1267650b77fa750` (catalogo.html), `bb071ad7e48f196316e55e5171b578e15952b6ce` (catalogo.css), `517e8b65bc50b47e7810db7773f203607830bc08` (catalogo.js).
 - Próximo passo: conferir o deploy automático e testar a URL pública `/catalogo.html`; depois receber a fonte autorizada dos produtos para substituir as inspirações.
+
+
+## SIGA — recomendações após teste olfativo — 2026-10-26
+- `fragrancias.html`: ao terminar o teste, o resultado agora apresenta três caminhos de compra sugeridos com base na família vencedora (fresca, floral, doce ou amadeirada): perfumaria, cuidados de corpo/banho e uma terceira categoria alinhada ao perfil.
+- Cada recomendação abre `catalogo.html` com a categoria correspondente já selecionada; WhatsApp continua disponível para confirmar opções atuais.
+- As recomendações são categorias/estilos para explorar, não SKUs, preços ou disponibilidade inventados. A vitrine continua aguardando dados oficiais autorizados para exibir produtos reais.
+- Commits: `e8de3225cb14cf5095fdacb1dd9bb78fada26ed4` (`fragrancias.html`), `00b3bee39853a7933d6c542c0eba7e4dd469fc62` (`catalogo.js`).
+- Próximo passo: aguardar deploy do Vercel e testar o fluxo completo em navegador; não afirmar validação visual sem teste real.
