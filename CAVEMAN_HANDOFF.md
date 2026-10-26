@@ -114,3 +114,12 @@ VERIFY-FIRST:
 - Commits de páginas: `8866539`, `906b8c6`, `3b732e2`, `401b87d`, `ac76a2c`; alterações de index e CSS seguem nos commits retornados pela API nesta execução.
 - Próximo passo: confirmar HEAD, revisar integridade das páginas e estado do deploy. Não afirmar teste em navegador real ou publicação concluída sem evidência.
 - VERIFY-FIRST: estado remoto é canônico; preços e disponibilidade nunca devem ser inventados.
+
+
+## SIGA — verificação de fonte oficial e publicação — 2026-10-26
+- Revalidado commit e6f29973965e82a796e578d6574e0715658cc560: o status combinado do GitHub informa Vercel = success. Isso confirma status do deploy associado ao commit, não inspeção visual das páginas; a ferramenta web não conseguiu abrir as URLs do Vercel nesta sessão.
+- Pesquisa em fonte oficial: FAQ O Boticário “Como acessar o Catálogo Digital” explica que o catálogo digital é feito para compartilhar com clientes e informa que os preços exibidos são valores de venda final; URL: https://www.boticario.com.br/atendimento-online/revendedora/como-acessar-o-catalogo-digital.
+- Resultado de busca do catálogo digital oficial do Grupo Boticário declara que o conteúdo é protegido por direitos autorais e não pode ser reproduzido/modificado/transmitido no todo ou em parte sem prévia e expressa autorização. Não copiar o catálogo integral para o domínio Botica da Fabi sem obter permissão.
+- Próximo avanço autorizado: manter páginas editoriais próprias e links oficiais; se a titular fornecer autorização, feed ou exportação utilizável, importar campos permitidos (nome, descrição, imagem, preço, SKU, validade do preço e ciclo) e manter data da última atualização. Nunca raspar ou contornar login/controle de acesso, nem publicar preços antigos como atuais.
+- Para uma vitrine completa e confiável, pedir ao usuário um arquivo/exportação de catálogo autorizado ou confirmação de autorização/licença para reutilizar imagens e conteúdo. Sem isso, não há base confiável para inserir todos os produtos localmente.
+- A curadoria fragrancias.html foi conferida no repositório: 6 perguntas, perfis e funções de exportação PNG/PDF estão presentes no arquivo; isso não substitui teste funcional em navegador real.
