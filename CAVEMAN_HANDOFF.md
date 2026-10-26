@@ -123,3 +123,12 @@ VERIFY-FIRST:
 - Próximo avanço autorizado: manter páginas editoriais próprias e links oficiais; se a titular fornecer autorização, feed ou exportação utilizável, importar campos permitidos (nome, descrição, imagem, preço, SKU, validade do preço e ciclo) e manter data da última atualização. Nunca raspar ou contornar login/controle de acesso, nem publicar preços antigos como atuais.
 - Para uma vitrine completa e confiável, pedir ao usuário um arquivo/exportação de catálogo autorizado ou confirmação de autorização/licença para reutilizar imagens e conteúdo. Sem isso, não há base confiável para inserir todos os produtos localmente.
 - A curadoria fragrancias.html foi conferida no repositório: 6 perguntas, perfis e funções de exportação PNG/PDF estão presentes no arquivo; isso não substitui teste funcional em navegador real.
+
+
+## SIGA — vitrine interativa de produtos — 2026-10-26
+- Criada `catalogo.html`, com pesquisa, filtros por marca e categoria, ordenação, cartões responsivos e CTA de consulta por produto via WhatsApp.
+- Criados `catalogo.css` e `catalogo.js`; adicionados links para a vitrine no menu e no CTA principal de `index.html`.
+- A vitrine está em modo de estrutura editorial: imagens são inspirações genéricas, os valores aparecem como “Preço sob consulta” e a interface avisa que ainda faltam fotos/listagens oficiais autorizadas. Não afirmar que já contém o catálogo real completo.
+- Para preencher produtos reais com nomes, fotos e preços corretos, solicitar PDF/exportação autorizada do ciclo atual ou uma fonte oficial de dados; não copiar em massa conteúdo protegido sem autorização.
+- Commits desta alteração: `83a0c40fff489e0d04913c006fc531f9bb01e573` (index), `c80598b9f1d6486c1ca13d7dd1267650b77fa750` (catalogo.html), `bb071ad7e48f196316e55e5171b578e15952b6ce` (catalogo.css), `517e8b65bc50b47e7810db7773f203607830bc08` (catalogo.js).
+- Próximo passo: conferir o deploy automático e testar a URL pública `/catalogo.html`; depois receber a fonte autorizada dos produtos para substituir as inspirações.
