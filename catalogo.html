@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8faf7">
+<meta name="description" content="Explore a vitrine de beleza da Botica da Fabi por marca e categoria. Consulte valores e disponibilidade com atendimento pessoal.">
+<title>Vitrine de produtos | Botica da Fabi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="catalogo.css"><link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="topline"><span class="topline-dot"></span> SUA CURADORIA DE BELEZA <span class="topline-star">✳</span> Atendimento pessoal com Fabí Cŕïstińe</div>
+<header class="header">
+<a class="brand" href="index.html" aria-label="Botica da Fabi — início"><img src="logo.svg" alt="" class="brand-logo"><span class="brand-words">BOTICA <i>DA</i> FABI<small>BELEZA • CUIDADO • AFETO</small></span></a>
+<button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+<nav class="nav" aria-label="Menu principal"><a href="index.html#marcas">Marcas</a><a href="fragrancias.html">Descubra sua fragrância</a><a href="index.html#experiencia">Nossa experiência</a></nav>
+<a class="header-cta" href="https://wa.me/5521970023845?text=Oi%2C%20Fabi!%20Quero%20ajuda%20para%20escolher%20produtos." target="_blank" rel="noopener">Falar com a Fabi ↗</a>
+</header>
+<main class="catalog-page">
+<section class="catalog-hero"><div class="catalog-hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> A VITRINE BOTICA DA FABI</div><h1>Seu próximo<br>favorito está <em>aqui.</em></h1><p>Explore por marca, categoria ou nome e encontre inspiração para seu próximo ritual de beleza. A Fabi ajuda você a confirmar preço e disponibilidade.</p><a class="button button-primary" href="#produtos">Explorar vitrine <span>↓</span></a></div><div class="catalog-hero-art"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=85" alt="Seleção editorial de produtos de beleza"><span class="catalog-art-tag">BELEZA ESCOLHIDA<br><em>com carinho</em></span></div></section>
+<section class="catalog-controls" id="produtos" aria-label="Filtros da vitrine">
+<div class="catalog-controls-top"><div><div class="eyebrow">ENCONTRE O QUE COMBINA COM VOCÊ</div><h2>Explore a <em>vitrine.</em></h2></div><label class="catalog-search"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Buscar produto ou categoria…" aria-label="Buscar produto ou categoria"></label></div>
+<div class="filter-row" id="brand-filters" aria-label="Filtrar por marca"><button class="filter-chip active" data-brand="Todas">Todas as marcas</button><button class="filter-chip" data-brand="O Boticário">O Boticário</button><button class="filter-chip" data-brand="Eudora">Eudora</button><button class="filter-chip" data-brand="Quem Disse, Berenice?">Quem Disse, Berenice?</button><button class="filter-chip" data-brand="O.U.I Paris">O.U.I Paris</button></div>
+<div class="category-row" id="category-filters" aria-label="Filtrar por categoria"><button class="category-chip active" data-category="Todas">✳ Todas as categorias</button><button class="category-chip" data-category="Perfumaria">Perfumaria</button><button class="category-chip" data-category="Corpo e banho">Corpo & banho</button><button class="category-chip" data-category="Rosto e maquiagem">Rosto & maquiagem</button><button class="category-chip" data-category="Cabelos">Cabelos</button><button class="category-chip" data-category="Presentes">Presentes</button></div>
+<div class="catalog-notice"><span>✧</span><p><strong>Uma vitrine em atualização.</strong> As fotos abaixo são inspirações visuais, não fotos oficiais de produtos. Para evitar preços ou disponibilidade incorretos, os itens reais serão adicionados a partir do catálogo autorizado mais recente. Toque em “Consultar com a Fabi” para receber opções atuais.</p></div>
+<div class="catalog-results-line"><span id="results-count">6 inspirações</span><label>Ordenar <select id="sort-products" aria-label="Ordenar produtos"><option value="featured">Em destaque</option><option value="name">Nome A–Z</option></select></label></div>
+<div class="product-grid" id="product-grid" aria-live="polite"></div>
+<div class="empty-state" id="empty-state" hidden><span>⌕</span><h3>Nenhum resultado por aqui</h3><p>Tente outra busca ou escolha uma categoria diferente.</p><button class="button button-quiet" id="clear-filters">Limpar filtros</button></div>
+</section>
+<section class="catalog-help"><div><div class="eyebrow">PRESENTE, AUTOCUIDADO OU NOVA ASSINATURA?</div><h2>Vamos encontrar<br><em>o seu favorito.</em></h2><p>Conte o que você procura. A Fabi ajuda com opções, valores e disponibilidade do ciclo atual.</p></div><a class="button button-primary" href="https://wa.me/5521970023845?text=Oi%2C%20Fabi!%20Estou%20na%20vitrine%20da%20Botica%20da%20Fabi%20e%20quero%20ver%20os%20produtos%20dispon%C3%ADveis%20com%20pre%C3%A7os." target="_blank" rel="noopener">Consultar produtos no WhatsApp ↗</a></section>
+</main>
+<footer class="catalog-footer"><a class="brand" href="index.html"><img src="logo.svg" alt="" class="brand-logo"><span class="brand-words">BOTICA <i>DA</i> FABI<small>BELEZA • CUIDADO • AFETO</small></span></a><span>Curadoria independente de revenda · Valores e disponibilidade sob consulta.</span><a href="index.html">Voltar ao início ↑</a></footer>
+<script src="script.js"></script><script src="catalogo.js"></script>
+</body></html>
