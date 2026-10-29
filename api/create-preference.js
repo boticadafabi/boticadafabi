@@ -1,5 +1,7 @@
 // Vercel Serverless Function — Mercado Pago Checkout Pro
 // Configure MP_ACCESS_TOKEN and SITE_URL in Vercel Project Settings > Environment Variables.
+const DELIVERY_FEES = { nearby: 5, intermediate: 10, distant: 15 };
+const DELIVERY_LABELS = { nearby: "Região próxima", intermediate: "Região intermediária", distant: "Região mais distante" };
 const PRODUCTS = {
   1:{name:"Lily L’Or Elixir Eau de Parfum, 75 ml",price:329.90},
   2:{name:"Lily L’Or Elixir Creme Acetinado, 200 g",price:143.90},
@@ -38,15 +40,17 @@ module.exports = async (req, res) => {
   if (req.method !== "POST") { res.setHeader("Allow", "POST"); return res.status(405).json({error:"Método não permitido."}); }
   if (!process.env.MP_ACCESS_TOKEN) return res.status(503).json({error:"Pagamento ainda não configurado. A loja precisa ativar as credenciais do Mercado Pago na Vercel."});
   try {
-    const {items, customer} = req.body || {};
+    const {items, customer, deliveryRegion} = req.body || {};
     if (!Array.isArray(items) || items.length < 1 || items.length > 50) return res.status(400).json({error:"Carrinho inválido."});
     if (!customer || !customer.name || !customer.email || !customer.phone || !customer.cep || !customer.address || !customer.number || !customer.city || !customer.state) return res.status(400).json({error:"Preencha todos os dados de contato e entrega."});
+    if (!Object.prototype.hasOwnProperty.call(DELIVERY_FEES, deliveryRegion)) return res.status(400).json({error:"Selecione uma região de entrega válida."});
     const mpItems = [];
     for (const row of items) {
       const id = Number(row.id), qty = Number(row.quantity), product = PRODUCTS[id];
       if (!product || !Number.isInteger(qty) || qty < 1 || qty > 20) return res.status(400).json({error:"Um dos produtos ou quantidades é inválido."});
       mpItems.push({id:String(id),title:product.name,quantity:qty,currency_id:"BRL",unit_price:product.price});
     }
+    mpItems.push({id:"entrega-"+deliveryRegion,title:"Entrega pessoal — "+DELIVERY_LABELS[deliveryRegion],quantity:1,currency_id:"BRL",unit_price:DELIVERY_FEES[deliveryRegion]});
     const siteUrl = (process.env.SITE_URL || "https://boticadafabi.vercel.app").replace(/\/$/,"");
     const externalReference = "BF-" + Date.now().toString(36).toUpperCase() + "-" + Math.random().toString(36).slice(2,8).toUpperCase();
     const response = await fetch("https://api.mercadopago.com/checkout/preferences", {
@@ -57,7 +61,7 @@ module.exports = async (req, res) => {
         payer:{name:String(customer.name).slice(0,100),email:String(customer.email).slice(0,150),phone:{number:String(customer.phone).replace(/[^0-9]/g,"").slice(0,20)}},
         shipments:{receiver_address:{zip_code:String(customer.cep).replace(/[^0-9]/g,"").slice(0,8),street_name:String(customer.address).slice(0,150),street_number:String(customer.number).slice(0,20),floor:String(customer.complement||"").slice(0,80),city_name:String(customer.city).slice(0,100),state_name:String(customer.state).slice(0,100)}},
         external_reference:externalReference,
-        metadata:{store:"Botica da Fabi",customer_name:String(customer.name).slice(0,100),customer_phone:String(customer.phone).slice(0,30),customer_cep:String(customer.cep).slice(0,12),customer_address:String(customer.address+" "+customer.number+" "+(customer.complement||"")).slice(0,250),customer_city:String(customer.city).slice(0,100),customer_state:String(customer.state).slice(0,100)},
+        metadata:{store:"Botica da Fabi",customer_name:String(customer.name).slice(0,100),customer_phone:String(customer.phone).slice(0,30),customer_cep:String(customer.cep).slice(0,12),customer_address:String(customer.address+" "+customer.number+" "+(customer.complement||"")).slice(0,250),customer_city:String(customer.city).slice(0,100),customer_state:String(customer.state).slice(0,100),delivery_region:DELIVERY_LABELS[deliveryRegion],delivery_fee:DELIVERY_FEES[deliveryRegion]},
         back_urls:{success:siteUrl+"/catalogo.html?pagamento=sucesso",pending:siteUrl+"/catalogo.html?pagamento=pendente",failure:siteUrl+"/catalogo.html?pagamento=falhou"},
         auto_return:"approved",
         statement_descriptor:"BOTICA DA FABI"
